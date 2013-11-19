@@ -1,0 +1,184 @@
+// TYPEFACES
+
+$sans-serif:        "Lato", Helvetica, Verdana, sans-serif;
+$serif:             "Georgia", Cambria, "Times New Roman", Times, serif;
+$condensed:         "Oswald", "Arial Narrow", Arial, sans-serif;
+
+// entypo symbol font
+@import url('http://weloveiconfonts.com/api/?family=entypo');
+[class*="entypo-"]:before {font-family: 'entypo', sans-serif;}
+
+
+
+// STYLES
+
+%caps {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+%highlight {
+  background-color: $base9;
+  color: $base2;
+  padding: 1px 3px;
+  &:hover {
+    background-color: $bg;
+    color: $anchor;
+  }
+}
+
+
+
+
+// FONT SIZING
+// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@mixin font-size($size: 16){
+  font-size: $size + px;
+  font-size: $size / 16 + rem;
+}
+
+
+html {
+    font-size: 100%; // 16px 
+}
+
+body {
+    @include font-size(16);
+}
+
+
+// BASE
+
+
+body {
+    @extend %sans;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+
+
+
+// HEADERS
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-family: $sans-serif;
+	line-height: 1.4;
+	text-rendering: optimizelegibility;
+	font-weight: 700;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+    @include font-size(48);
+	@include breakpoint(mama) {@include font-size(38);}
+	@include breakpoint(papa) {@include font-size(48);}
+}
+
+h2, .h2 {
+    @include font-size(28);
+	margin-bottom: 0.375em;
+}
+
+h3, .h3 {
+    @include font-size(24);
+}
+
+h4, .h4 {
+    @include font-size(21);
+}
+
+h5, .h5 {
+    @include font-size(18);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+h6, .h6 {
+    @include font-size(15);
+}
+
+p {
+    @include font-size(18);
+	line-height: 1.8;
+	font-family: $sans-serif;
+}
+
+li, dt, dd, input, label {
+    @include font-size(18);
+	line-height: 1.4;
+	margin-bottom: 1em;
+	font-family: $sans-serif;
+}
+
+small {
+    @include font-size(13);
+	line-height: 1.4;
+	font-family: $sans-serif;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+i, em {
+    font-style: italic;
+}
+
+
+
+ul, ol {
+    margin: 0 0 2.4em;
+    li {
+        margin-bottom: .8em;
+    }
+}
+
+
+blockquote {
+    padding: 1em 5%;
+    margin: 1em 0;
+    ol, ul {
+        margin-bottom: 1.5em;
+    }
+    p, li {
+    	@include font-size(16);
+    	color: $base5;
+    }
+    h6 {
+    	@include font-size(14);
+    	margin: 0;
+    }
+}
+
+
+code,
+kbd,
+pre,
+samp {
+    font-family: 'Courier New', Courier, monospace;
+	@include font-size(18);
+}
+
+pre {
+    padding: 1em 1.5em;
+    margin: 1.8em 0;
+    display: block;
+    background: $base2;
+    color: $base0;
+}
+
+
+
+
+
+// VARIATIONS

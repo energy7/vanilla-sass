@@ -1,0 +1,62 @@
+
+// FORMS
+
+
+fieldset {
+    border: 0;
+	padding: 0;
+}
+
+textarea,
+input[type="text"],
+input[type="password"]
+ {
+  display: block;
+  font-size: 14px;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  background: $loud;
+  border: 0;
+  color: $base0;
+  text-transform: uppercase;
+  padding: .5em 2em;
+  &:hover {
+    background: $loud-dark;
+    color: $base0;
+  }
+}
+
+
+
+// NEW
+
+input[type='email'] {
+    padding: 5px;
+}
+
+input[type='submit'] {
+    border: 0;
+    background: $charcoal;
+    font-family: $condensed;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $white;
+    line-height: 1;
+    margin: 0;
+    padding: .75em 1em;
+    @include transition(all 0.2s ease-in-out);
+    &:hover {
+        background: $navy;
+    }
+}
+
+
+// SEARCH 
+
+#searchform label {
+    display: none;
+}

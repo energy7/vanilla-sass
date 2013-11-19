@@ -1,0 +1,12 @@
+// CONTAINERS 
+// use Bourbon Neat grid
+
+
+
+.wrap {
+	width: 96%;
+	margin: 0 auto;
+	@include breakpoint(papa) {
+    	max-width: 1140px;
+	}
+}

@@ -1,0 +1,66 @@
+
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+	color: $link-color;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+
+// LINKS
+
+a 			{
+                color: inherit; 
+                text-decoration: none; 
+                cursor: pointer;     
+                @include transition (all 0.25s ease);
+            }
+a:link 		{color: inherit;}  // unvisited  
+a:visited 	{color: inherit;}	 // visited  
+a:hover 	{color: $anchor;}	 // mouseover  
+a:active 	{color: inherit;}	 // selected  
+
+
+.content p a,
+.content li a {
+    @extend %highlight;
+}
+
+.nav-select a {
+    @extend %highlight;
+    color: $base5;
+}
+
+
+
+
+// BUTTONS
+
+%btn-blank {
+    border: 0;
+    background: transparent;
+}
+
+
